@@ -2,97 +2,126 @@ package upe.br.verdinhas.catalogo.modelos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-
 @Entity
 public class Necessidades {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
-	@Column (name = "id_necessidades")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_necessidades")
 	private Long id;
-	
-	
-	
-	private String incidenciaSolar;
-	private String exposicaoSolar;
-	private String rega;
-	private String frequenciaRega;
-	private String tipoVento;
-	
-	private String vaso;
-	
-	private String podaLimpeza;
-	private String frequenciaPoda;
-	
-	
+
 	@OneToOne(mappedBy = "necessidades")
 	private Verdinha verdinha;
-	
-	
+
+	@Enumerated(EnumType.STRING)
+	private TipoRega rega;
+
+	@Enumerated(EnumType.STRING)
+	private TipoIncidenciaSolar incidenciaSolar;
+
+	@Enumerated(EnumType.STRING)
+	private TipoExposicaoSolar exposicaoSolar;
+
+	@Enumerated(EnumType.STRING)
+	private TipoFrequencia frequenciaRega;
+
+	@Enumerated(EnumType.STRING)
+	private TipoVento tipoVento;
+
+	@Enumerated(EnumType.STRING)
+	private TipoVaso vaso;
+
+	@Enumerated(EnumType.STRING)
+	private TipoPodaLimpeza podaLimpeza;
+
+	@Enumerated(EnumType.STRING)
+	private TipoFrequencia frequenciaPoda;
+
 	public Verdinha getVerdinha() {
 		return verdinha;
 	}
+
 	public void setVerdinha(Verdinha verdinha) {
 		this.verdinha = verdinha;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getIncidenciaSolar() {
-		return incidenciaSolar;
-	}
-	public void setIncidenciaSolar(String incidenciaSolar) {
-		this.incidenciaSolar = incidenciaSolar;
-	}
-	public String getExposicaoSolar() {
-		return exposicaoSolar;
-	}
-	public void setExposicaoSolar(String exposicaoSolar) {
-		this.exposicaoSolar = exposicaoSolar;
-	}
-	public String getRega() {
+
+	public TipoRega getRega() {
 		return rega;
 	}
-	public void setRega(String rega) {
+
+	public void setRega(TipoRega rega) {
 		this.rega = rega;
 	}
-	public String getFrequenciaRega() {
+
+	public TipoIncidenciaSolar getIncidenciaSolar() {
+		return incidenciaSolar;
+	}
+
+	public void setIncidenciaSolar(TipoIncidenciaSolar incidenciaSolar) {
+		this.incidenciaSolar = incidenciaSolar;
+	}
+
+	public TipoExposicaoSolar getExposicaoSolar() {
+		return exposicaoSolar;
+	}
+
+	public void setExposicaoSolar(TipoExposicaoSolar exposicaoSolar) {
+		this.exposicaoSolar = exposicaoSolar;
+	}
+
+	public TipoFrequencia getFrequenciaRega() {
 		return frequenciaRega;
 	}
-	public void setFrequenciaRega(String frequenciaRega) {
+
+	public void setFrequenciaRega(TipoFrequencia frequenciaRega) {
 		this.frequenciaRega = frequenciaRega;
 	}
-	public String getTipoVento() {
+
+	public TipoVento getTipoVento() {
 		return tipoVento;
 	}
-	public void setTipoVento(String tipoVento) {
+
+	public void setTipoVento(TipoVento tipoVento) {
 		this.tipoVento = tipoVento;
 	}
-	public String getVaso() {
+
+	public TipoVaso getVaso() {
 		return vaso;
 	}
-	public void setVaso(String vaso) {
+
+	public void setVaso(TipoVaso vaso) {
 		this.vaso = vaso;
 	}
-	public String getPodaLimpeza() {
+
+	public TipoPodaLimpeza getPodaLimpeza() {
 		return podaLimpeza;
 	}
-	public void setPodaLimpeza(String podaLimpeza) {
+
+	public void setPodaLimpeza(TipoPodaLimpeza podaLimpeza) {
 		this.podaLimpeza = podaLimpeza;
 	}
-	public String getFrequenciaPoda() {
+
+	public TipoFrequencia getFrequenciaPoda() {
 		return frequenciaPoda;
 	}
-	public void setFrequenciaPoda(String frequenciaPoda) {
+
+	public void setFrequenciaPoda(TipoFrequencia frequenciaPoda) {
 		this.frequenciaPoda = frequenciaPoda;
 	}
-	
+
 }

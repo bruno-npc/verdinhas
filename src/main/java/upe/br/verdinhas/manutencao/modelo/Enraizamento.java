@@ -4,11 +4,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.Transient;
 
 @Entity
 public class Enraizamento {
@@ -25,8 +26,8 @@ public class Enraizamento {
 	@OneToOne(mappedBy = "enraizamento")
 	private Ocorrencia ocorrencia;
 
-	@Transient
-	private String intensidade;
+	@Enumerated(EnumType.STRING)
+	private TipoIntensidade intensidade;
 
 	public byte[] getFotos() {
 		return fotos;
@@ -60,11 +61,11 @@ public class Enraizamento {
 		this.data = data;
 	}
 
-	public String getIntensidade() {
+	public TipoIntensidade getIntensidade() {
 		return intensidade;
 	}
 
-	public void setIntensidade(String intensidade) {
+	public void setIntensidade(TipoIntensidade intensidade) {
 		this.intensidade = intensidade;
 	}
 

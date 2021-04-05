@@ -3,6 +3,8 @@ package upe.br.verdinhas.manutencao.modelo;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +28,7 @@ public class Manutencao {
 	private String observacao;
 	private byte[] fotos;
 
-	@ManyToOne (cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_adubacao")
 	private Adubo adubacao;
 
@@ -44,7 +46,9 @@ public class Manutencao {
 
 	@Transient
 	private String poda;
-	private String tipoManutencao;
+
+	@Enumerated(EnumType.STRING)
+	private TipoManutencao tipoManutencao;
 
 	public Long getId() {
 		return id;
@@ -54,11 +58,11 @@ public class Manutencao {
 		this.id = id;
 	}
 
-	public String getTipoManutencao() {
+	public TipoManutencao getTipoManutencao() {
 		return tipoManutencao;
 	}
 
-	public void setTipoManutencao(String tipoManutencao) {
+	public void setTipoManutencao(TipoManutencao tipoManutencao) {
 		this.tipoManutencao = tipoManutencao;
 	}
 

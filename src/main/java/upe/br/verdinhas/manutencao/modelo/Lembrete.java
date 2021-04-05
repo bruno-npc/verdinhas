@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,10 +20,11 @@ public class Lembrete {
 	private Long id;
 	
 	private String descricao;
-	private String tipo;
 	private LocalDateTime agendamento;
 	
 	
+	@Enumerated(EnumType.STRING)
+	private TipoManutencao tipo;
 	
 	public Long getId() {
 		return id;
@@ -34,12 +37,6 @@ public class Lembrete {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
 	}
 	public LocalDateTime getAgendamento() {
 		return agendamento;

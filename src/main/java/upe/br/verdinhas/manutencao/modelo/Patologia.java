@@ -5,13 +5,12 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Patologia {
@@ -23,16 +22,25 @@ public class Patologia {
 
 	private LocalDate data;
 	private String observacao;
-	private String aparenciaFolhagem;
-	private String aparenciaRaizes;
-	private String aparenciaFrutos;
 	private byte[] fotos;
 
-	@OneToMany (mappedBy = "patologias")
+	@OneToMany(mappedBy = "patologias")
 	private List<Ocorrencia> ocorrencias;
 
-	private String intensidade;
-	private String tipo;
+	@Enumerated(EnumType.STRING)
+	private TipoPatologia intensidade;
+
+	@Enumerated(EnumType.STRING)
+	private TipoPatologia tipo;
+
+	@Enumerated(EnumType.STRING)
+	private TipoAparencia aparenciaFolhagem;
+
+	@Enumerated(EnumType.STRING)
+	private TipoAparencia aparenciaRaizes;
+
+	@Enumerated(EnumType.STRING)
+	private TipoAparencia aparenciaFrutos;
 
 	public Long getId() {
 		return id;
@@ -50,19 +58,19 @@ public class Patologia {
 		this.data = data;
 	}
 
-	public String getIntensidade() {
+	public TipoPatologia getIntensidade() {
 		return intensidade;
 	}
 
-	public void setIntensidade(String intensidade) {
+	public void setIntensidade(TipoPatologia intensidade) {
 		this.intensidade = intensidade;
 	}
 
-	public String getTipo() {
+	public TipoPatologia getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(TipoPatologia tipo) {
 		this.tipo = tipo;
 	}
 
@@ -74,27 +82,27 @@ public class Patologia {
 		this.observacao = observacao;
 	}
 
-	public String getAparenciaFolhagem() {
+	public TipoAparencia getAparenciaFolhagem() {
 		return aparenciaFolhagem;
 	}
 
-	public void setAparenciaFolhagem(String aparenciaFolhagem) {
+	public void setAparenciaFolhagem(TipoAparencia aparenciaFolhagem) {
 		this.aparenciaFolhagem = aparenciaFolhagem;
 	}
 
-	public String getAparenciaRaizes() {
+	public TipoAparencia getAparenciaRaizes() {
 		return aparenciaRaizes;
 	}
 
-	public void setAparenciaRaizes(String aparenciaRaizes) {
+	public void setAparenciaRaizes(TipoAparencia aparenciaRaizes) {
 		this.aparenciaRaizes = aparenciaRaizes;
 	}
 
-	public String getAparenciaFrutos() {
+	public TipoAparencia getAparenciaFrutos() {
 		return aparenciaFrutos;
 	}
 
-	public void setAparenciaFrutos(String aparenciaFrutos) {
+	public void setAparenciaFrutos(TipoAparencia aparenciaFrutos) {
 		this.aparenciaFrutos = aparenciaFrutos;
 	}
 
@@ -113,6 +121,5 @@ public class Patologia {
 	public void setOcorrencias(List<Ocorrencia> ocorrencias) {
 		this.ocorrencias = ocorrencias;
 	}
-
 
 }

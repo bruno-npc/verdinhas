@@ -1,4 +1,4 @@
-package upe.br.verdinhas.catalogo.dao;
+package upe.br.verdinhas.manutencao.dao;
 
 import org.springframework.data.repository.CrudRepository;
 

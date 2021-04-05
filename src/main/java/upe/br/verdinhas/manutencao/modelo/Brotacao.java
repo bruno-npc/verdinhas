@@ -2,11 +2,12 @@ package upe.br.verdinhas.manutencao.modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.Transient;
 
 @Entity
 public class Brotacao {
@@ -22,9 +23,11 @@ public class Brotacao {
 	@OneToOne(mappedBy = "brotacao")
 	private Ocorrencia ocorrencia;
 
-	@Transient
-	private String intensidade;
-	private String tipo;
+	@Enumerated(EnumType.STRING)
+	private TipoBrotacao tipo;
+
+	@Enumerated(EnumType.STRING)
+	private TipoIntensidade intensidade;
 
 	public Ocorrencia getOcorrencia() {
 		return ocorrencia;
@@ -42,20 +45,20 @@ public class Brotacao {
 		this.id = id;
 	}
 
-	public String getIntensidade() {
-		return intensidade;
-	}
-
-	public void setIntensidade(String intensidade) {
-		this.intensidade = intensidade;
-	}
-
-	public String getTipo() {
+	public TipoBrotacao getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(TipoBrotacao tipo) {
 		this.tipo = tipo;
+	}
+
+	public TipoIntensidade getIntensidade() {
+		return intensidade;
+	}
+
+	public void setIntensidade(TipoIntensidade intensidade) {
+		this.intensidade = intensidade;
 	}
 
 	public String getObservacao() {
