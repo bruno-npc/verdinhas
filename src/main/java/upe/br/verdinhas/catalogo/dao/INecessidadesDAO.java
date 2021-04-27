@@ -4,12 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import upe.br.verdinhas.catalogo.modelos.Necessidades;
-/**
- * 
- * @author cycy-
- *
- */
-@Repository
+
 public interface INecessidadesDAO extends CrudRepository<Necessidades, Long>
 {
 
