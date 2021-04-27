@@ -3,12 +3,14 @@ package upe.br.verdinhas.catalogo.servicos;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import upe.br.verdinhas.catalogo.dao.ICaracteristicasDAO;
 import upe.br.verdinhas.catalogo.dao.IVerdinhaDAO;
 import upe.br.verdinhas.catalogo.modelos.Caracteristicas;
 import upe.br.verdinhas.catalogo.modelos.Verdinha;
 
+@Service
 public class CaracteristicasServico implements ICaracteristicasServicos {
 
 	@Autowired

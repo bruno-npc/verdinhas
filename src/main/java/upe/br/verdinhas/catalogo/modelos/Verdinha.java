@@ -54,6 +54,10 @@ public class Verdinha {
 		this.genero = genero;
 	}
 
+	public Verdinha(Long idVerdinha) {
+		this.id = idVerdinha;
+	}
+
 	public Necessidades getNecessidades() {
 		return necessidades;
 	}
