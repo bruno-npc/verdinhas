@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import upe.br.verdinhas.catalogo.modelos.Local;
-import upe.br.verdinhas.catalogo.servico.ILocalServico;
+import upe.br.verdinhas.catalogo.servicos.ILocalServico;
 
 @WebServlet // Anotação para servlet
 (urlPatterns = { "/local" })

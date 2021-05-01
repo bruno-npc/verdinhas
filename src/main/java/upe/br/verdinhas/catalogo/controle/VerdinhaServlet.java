@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import upe.br.verdinhas.catalogo.modelos.Verdinha;
-import upe.br.verdinhas.catalogo.servico.IVerdinhaServicos;
+import upe.br.verdinhas.catalogo.servicos.IVerdinhaServicos;
 
 @WebServlet(urlPatterns = { "/verdinha" })
 public class VerdinhaServlet extends HttpServlet {

@@ -1,4 +1,4 @@
-package upe.br.verdinhas.catalogo.servico;
+package upe.br.verdinhas.catalogo.servicos;
 
 import java.util.List;
 
@@ -38,6 +38,14 @@ public class VerdinhaServico implements IVerdinhaServicos {
 	public List<Verdinha> listar() {
 		return (List<Verdinha>) dao.findAll();
 		
+	}
+
+	@Override
+	public void deletar(Verdinha verdinha) {
+		if (verdinha == null) {
+			throw new RuntimeException("Verdinha nula não pode ser deletada");
+		}
+		dao.delete(verdinha);
 	}
 
 }

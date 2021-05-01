@@ -12,7 +12,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import upe.br.verdinhas.catalogo.dao.ICaracteristicasDAO;
 import upe.br.verdinhas.catalogo.modelos.Caracteristicas;
 import upe.br.verdinhas.catalogo.modelos.Verdinha;
-import upe.br.verdinhas.catalogo.servico.CaracteristicasServico;
+import upe.br.verdinhas.catalogo.servicos.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CaracteristicasServicoTest {

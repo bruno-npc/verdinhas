@@ -1,4 +1,4 @@
-package upe.br.verdinhas.catalogo.servico;
+package upe.br.verdinhas.catalogo.servicos;
 
 import upe.br.verdinhas.catalogo.modelos.Local;
 

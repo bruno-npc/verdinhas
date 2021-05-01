@@ -1,4 +1,4 @@
-package upe.br.verdinhas.catalogo.servico;
+package upe.br.verdinhas.catalogo.servicos;
 
 import java.util.List;
 
@@ -10,4 +10,5 @@ public interface IVerdinhaServicos {
 
 	List<Verdinha> listar();
 	
+	void deletar (Verdinha verdinha);
 }

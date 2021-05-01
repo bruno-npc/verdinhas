@@ -8,5 +8,5 @@ import upe.br.verdinhas.catalogo.modelos.Verdinha;
 @Repository
 public interface IVerdinhaDAO extends CrudRepository<Verdinha, Long>
 {
-
+	
 }

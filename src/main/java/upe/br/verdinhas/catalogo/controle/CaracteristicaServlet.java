@@ -35,7 +35,6 @@ public class CaracteristicaServlet extends HttpServlet {
 		res.getOutputStream().print(mensagem);
 	}
 
-	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Caracteristicas caracteristicas = preecherCaracteristicas(req);
 

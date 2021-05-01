@@ -3,17 +3,19 @@ package upe.br.verdinhas.catalogo.servicos;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import upe.br.verdinhas.catalogo.dao.INecessidadesDAO;
 import upe.br.verdinhas.catalogo.dao.IVerdinhaDAO;
 import upe.br.verdinhas.catalogo.modelos.Necessidades;
 import upe.br.verdinhas.catalogo.modelos.Verdinha;
 
+@Service
 public class NecessidadesServico implements INecessidadesServicos {
-	
+
 	@Autowired
 	private INecessidadesDAO dao;
-	
+
 	@Autowired
 	private IVerdinhaDAO verdinhaDAO;
 
@@ -70,5 +72,4 @@ public class NecessidadesServico implements INecessidadesServicos {
 		}
 	}
 
-	
 }
