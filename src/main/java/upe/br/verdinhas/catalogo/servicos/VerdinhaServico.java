@@ -9,7 +9,7 @@ import upe.br.verdinhas.catalogo.dao.IVerdinhaDAO;
 import upe.br.verdinhas.catalogo.modelos.Verdinha;
 
 @Service
-public class VerdinhaServico implements IVerdinhaServicos {
+public class VerdinhaServico implements IVerdinhaServico {
 
 	@Autowired
 	private IVerdinhaDAO dao;

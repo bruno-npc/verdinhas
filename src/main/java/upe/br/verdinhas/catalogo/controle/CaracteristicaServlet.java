@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import upe.br.verdinhas.catalogo.modelos.Caracteristicas;
 import upe.br.verdinhas.catalogo.modelos.Verdinha;
-import upe.br.verdinhas.catalogo.servicos.ICaracteristicasServicos;
 
 @WebServlet(urlPatterns = { "/caracteristica" })
 public class CaracteristicaServlet extends HttpServlet {
