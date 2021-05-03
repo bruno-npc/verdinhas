@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import upe.br.verdinhas.catalogo.modelos.Verdinha;
-import upe.br.verdinhas.catalogo.servicos.IVerdinhaServicos;
+import upe.br.verdinhas.catalogo.modelo.Verdinha;
+import upe.br.verdinhas.catalogo.servico.IVerdinhaServicos;
 
 @WebServlet(urlPatterns = { "/verdinha" })
 public class VerdinhaServlet extends HttpServlet {
@@ -45,5 +45,10 @@ public class VerdinhaServlet extends HttpServlet {
 			resultado += verdinha.toString();
 		}*/
 		resp.getOutputStream().print(verdinhas.toString());
+	}
+	
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 	}
 }

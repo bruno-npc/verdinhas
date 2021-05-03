@@ -1,4 +1,4 @@
-package upe.br.verdinhas.catalogo.modelos;
+package upe.br.verdinhas.catalogo.modelo;
 
 public enum TipoVento {
 

@@ -1,6 +1,6 @@
-package upe.br.verdinhas.catalogo.servicos;
+package upe.br.verdinhas.catalogo.servico;
 
-import upe.br.verdinhas.catalogo.modelos.Local;
+import upe.br.verdinhas.catalogo.modelo.Local;
 
 public interface ILocalServico {
 

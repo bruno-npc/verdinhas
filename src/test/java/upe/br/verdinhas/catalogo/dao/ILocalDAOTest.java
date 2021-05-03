@@ -13,7 +13,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import upe.br.verdinhas.catalogo.modelos.Local;
+import upe.br.verdinhas.catalogo.modelo.Local;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

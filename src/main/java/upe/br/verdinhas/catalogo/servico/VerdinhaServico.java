@@ -1,4 +1,4 @@
-package upe.br.verdinhas.catalogo.servicos;
+package upe.br.verdinhas.catalogo.servico;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import upe.br.verdinhas.catalogo.dao.IVerdinhaDAO;
-import upe.br.verdinhas.catalogo.modelos.Verdinha;
+import upe.br.verdinhas.catalogo.modelo.Verdinha;
 
 @Service
 public class VerdinhaServico implements IVerdinhaServicos {
@@ -37,7 +37,6 @@ public class VerdinhaServico implements IVerdinhaServicos {
 	@Override
 	public List<Verdinha> listar() {
 		return (List<Verdinha>) dao.findAll();
-		
 	}
 
 	@Override

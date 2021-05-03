@@ -1,8 +1,8 @@
-package upe.br.verdinhas.catalogo.servicos;
+package upe.br.verdinhas.catalogo.servico;
 
 import java.util.List;
 
-import upe.br.verdinhas.catalogo.modelos.Verdinha;
+import upe.br.verdinhas.catalogo.modelo.Verdinha;
 
 public interface IVerdinhaServicos {
 

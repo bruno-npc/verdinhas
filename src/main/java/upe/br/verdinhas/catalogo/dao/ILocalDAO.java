@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import upe.br.verdinhas.catalogo.modelos.Local;
+import upe.br.verdinhas.catalogo.modelo.Local;
 
 @Repository
 public interface ILocalDAO extends CrudRepository<Local, Long> {

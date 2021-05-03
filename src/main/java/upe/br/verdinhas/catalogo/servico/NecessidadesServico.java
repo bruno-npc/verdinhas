@@ -1,5 +1,6 @@
-package upe.br.verdinhas.catalogo.servicos;
+package upe.br.verdinhas.catalogo.servico;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import upe.br.verdinhas.catalogo.dao.INecessidadesDAO;
 import upe.br.verdinhas.catalogo.dao.IVerdinhaDAO;
-import upe.br.verdinhas.catalogo.modelos.Necessidades;
-import upe.br.verdinhas.catalogo.modelos.Verdinha;
+import upe.br.verdinhas.catalogo.modelo.Necessidades;
+import upe.br.verdinhas.catalogo.modelo.Verdinha;
 
 @Service
 public class NecessidadesServico implements INecessidadesServicos {
@@ -70,6 +71,11 @@ public class NecessidadesServico implements INecessidadesServicos {
 		if (necessidades.getVaso() == null) {
 			throw new RuntimeException("Os dados de necessidades/vaso devem ser preenchidos.");
 		}
+	}
+
+	@Override
+	public List<Necessidades> listar() {
+		return (List<Necessidades>) dao.findAll();
 	}
 
 }

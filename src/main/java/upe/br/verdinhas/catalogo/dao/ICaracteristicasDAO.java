@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import upe.br.verdinhas.catalogo.modelos.Caracteristicas;
+import upe.br.verdinhas.catalogo.modelo.Caracteristicas;
 
 @Repository
 public interface ICaracteristicasDAO extends CrudRepository<Caracteristicas, Long> {
@@ -24,5 +24,7 @@ public interface ICaracteristicasDAO extends CrudRepository<Caracteristicas, Lon
 	List<Caracteristicas> findByFrutos(String frutos);
 
 	List<Caracteristicas> findByRaizes(String raizes);
+	
+	List<Caracteristicas> findById(String id);
 
 }

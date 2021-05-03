@@ -1,11 +1,11 @@
-package upe.br.verdinhas.catalogo.servicos;
+package upe.br.verdinhas.catalogo.servico;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import upe.br.verdinhas.catalogo.dao.ILocalDAO;
-import upe.br.verdinhas.catalogo.modelos.Local;
-import upe.br.verdinhas.catalogo.servicos.ILocalServico;
+import upe.br.verdinhas.catalogo.modelo.Local;
+import upe.br.verdinhas.catalogo.servico.ILocalServico;
 
 @Service // Serviço
 public class LocalServico implements ILocalServico {
