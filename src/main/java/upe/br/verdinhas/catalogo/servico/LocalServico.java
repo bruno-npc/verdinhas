@@ -40,10 +40,16 @@ public class LocalServico implements ILocalServico {
 			throw new RuntimeException("Local deve ser preenchida.");
 		}
 		if (local.getNome() == null) {
-			throw new RuntimeException("O nome de local deve ser preenchido");
+			throw new RuntimeException("O nome do local deve ser preenchido");
 		}
 		if (local.getDescricao() == null) {
 			throw new RuntimeException("Descrição do local deve ser preenchido.");
+		}
+		if (local.getUmidade() == null) {
+			throw new RuntimeException("A umidade do local deve ser preenchido.");
+		}
+		if (local.isCobertura() == true || local.isCobertura() == false) { //Observar se esta certo
+			throw new RuntimeException("Identifique se está coberto ou não");
 		}
 	}
 

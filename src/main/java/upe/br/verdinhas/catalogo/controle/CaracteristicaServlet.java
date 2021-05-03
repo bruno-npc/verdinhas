@@ -13,10 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 
+<<<<<<< HEAD
 import upe.br.verdinhas.catalogo.dao.ICaracteristicasDAO;
 import upe.br.verdinhas.catalogo.modelo.Caracteristicas;
 import upe.br.verdinhas.catalogo.modelo.Verdinha;
 import upe.br.verdinhas.catalogo.servico.ICaracteristicasServicos;
+=======
+import upe.br.verdinhas.catalogo.modelos.Caracteristicas;
+import upe.br.verdinhas.catalogo.modelos.Verdinha;
+>>>>>>> main
 
 @WebServlet(urlPatterns = { "/caracteristica" })
 public class CaracteristicaServlet extends HttpServlet {

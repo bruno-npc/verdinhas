@@ -1,5 +1,6 @@
 package upe.br.verdinhas.catalogo.controle;
 
+
 import java.io.IOException;
 import java.util.List;
 
@@ -11,14 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+<<<<<<< HEAD
 import upe.br.verdinhas.catalogo.modelo.Verdinha;
 import upe.br.verdinhas.catalogo.servico.IVerdinhaServicos;
+=======
+import upe.br.verdinhas.catalogo.modelos.Verdinha;
+<<<<<<< Updated upstream
+import upe.br.verdinhas.catalogo.servicos.IVerdinhaServicos;
+=======
+import upe.br.verdinhas.catalogo.servico.IVerdinhaServico;
+
+>>>>>>> Stashed changes
+>>>>>>> main
 
 @WebServlet(urlPatterns = { "/verdinha" })
 public class VerdinhaServlet extends HttpServlet {
 
 	@Autowired
-	private IVerdinhaServicos servico;
+	private IVerdinhaServico servico;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
