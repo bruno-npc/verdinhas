@@ -33,12 +33,35 @@ public class CaracteristicasServico implements ICaracteristicasServicos {
 	public void alterar(Caracteristicas caracteristicas) {
 
 		validarAtributosObrigatorios(caracteristicas);
-
+		
 		Optional<Verdinha> verdinha = verdinhaDAO.findById(caracteristicas.getVerdinha().getId());
+		
 		if (verdinha.isEmpty()) {
 			throw new RuntimeException("Os dados da verdinha não estão preenchidos. (Não localizado)");
 		}
+		
+		verdinha.get().setCaracteristicas(caracteristicas);
+		caracteristicas.setVerdinha(verdinha.get());
+		
 		dao.save(caracteristicas);
+	}
+
+
+	@Override
+	public void deletar(Caracteristicas caracteristicas) {
+		
+		Optional<Caracteristicas> caracteristicaDeletar = dao.findById(caracteristicas.getId());
+		
+		if (caracteristicas == null) {
+			throw new RuntimeException("Caracteristica nula, não pode ser excluida");
+		}
+		dao.delete(caracteristicas);
+	}
+	
+
+	@Override
+	public List<Caracteristicas> listar() {
+		return (List<Caracteristicas>) dao.findAll();
 	}
 
 	private void validarAtributosObrigatorios(Caracteristicas caracteristicas) {
@@ -58,18 +81,5 @@ public class CaracteristicasServico implements ICaracteristicasServicos {
 			throw new RuntimeException("Os dados de Flores devem ser preenchidos.");
 		}
 	}
-
-	@Override
-	public void deletar(Caracteristicas caracteristicas) {
-		if (caracteristicas == null) {
-			throw new RuntimeException("Caracteristica nula, não pode ser excluida");
-		}
-		dao.delete(caracteristicas);
-	}
-
-	@Override
-	public List<Caracteristicas> listar() {
-		return (List<Caracteristicas>) dao.findAll();
-	}
-
+	
 }

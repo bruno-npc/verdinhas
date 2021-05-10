@@ -3,6 +3,7 @@ package upe.br.verdinhas.catalogo.controle;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,24 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-<<<<<<< HEAD
+import upe.br.verdinhas.catalogo.dao.IVerdinhaDAO;
+import upe.br.verdinhas.catalogo.modelo.Caracteristicas;
 import upe.br.verdinhas.catalogo.modelo.Verdinha;
 import upe.br.verdinhas.catalogo.servico.IVerdinhaServicos;
-=======
-import upe.br.verdinhas.catalogo.modelos.Verdinha;
-<<<<<<< Updated upstream
-import upe.br.verdinhas.catalogo.servicos.IVerdinhaServicos;
-=======
-import upe.br.verdinhas.catalogo.servico.IVerdinhaServico;
+import upe.br.verdinhas.catalogo.servico.IVerdinhaServicos;
 
->>>>>>> Stashed changes
->>>>>>> main
 
 @WebServlet(urlPatterns = { "/verdinha" })
 public class VerdinhaServlet extends HttpServlet {
 
 	@Autowired
-	private IVerdinhaServico servico;
+	private IVerdinhaServicos servico;
+	
+	@Autowired
+	private IVerdinhaDAO dao;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
@@ -61,5 +59,24 @@ public class VerdinhaServlet extends HttpServlet {
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		String mensagem = "Verdinha deletada com sucesso";
+		
+		Verdinha verdinha = preencherVerdinha(req);
+		
+		dao.findById(verdinha.getId());
+
+		try {
+			servico.deletar(verdinha);
+		} catch (Exception e) {
+			mensagem = e.getMessage();
+		}
+		resp.getOutputStream().print(mensagem);
+		
 	}
+	
+	private Verdinha preencherVerdinha(HttpServletRequest req) {
+		
+		return null;
+	}
+	
 }

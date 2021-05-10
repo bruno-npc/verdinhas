@@ -13,15 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 
-<<<<<<< HEAD
 import upe.br.verdinhas.catalogo.dao.ICaracteristicasDAO;
 import upe.br.verdinhas.catalogo.modelo.Caracteristicas;
 import upe.br.verdinhas.catalogo.modelo.Verdinha;
 import upe.br.verdinhas.catalogo.servico.ICaracteristicasServicos;
-=======
-import upe.br.verdinhas.catalogo.modelos.Caracteristicas;
-import upe.br.verdinhas.catalogo.modelos.Verdinha;
->>>>>>> main
+
+
 
 @WebServlet(urlPatterns = { "/caracteristica" })
 public class CaracteristicaServlet extends HttpServlet {
@@ -76,14 +73,13 @@ public class CaracteristicaServlet extends HttpServlet {
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String mensagem = "Caracteristica deletada com sucesso";
-
-		Caracteristicas caracteristica = deletarCaracteristica(req);
 		
+		Caracteristicas caracteristicas = preencherCaracteristicas(req);
 		
-		dao.findById(caracteristica.getId());
+		dao.findById(caracteristicas.getId());
 
 		try {
-			servico.deletar(caracteristica);
+			servico.deletar(caracteristicas);
 		} catch (Exception e) {
 			mensagem = e.getMessage();
 		}
@@ -99,7 +95,7 @@ public class CaracteristicaServlet extends HttpServlet {
 		String CorFlores = req.getParameter("corflores");
 		String CorFolhagem = req.getParameter("corfolhagem");
 		String Frutos = req.getParameter("frutos");
-		String Raizes = req.getParameter("Raizes");
+		String Raizes = req.getParameter("raizes");
 		
 		String id = req.getParameter("id");
 
@@ -125,20 +121,6 @@ public class CaracteristicaServlet extends HttpServlet {
 		}
 
 		return caracteristicas;
-	}
-	
-	
-	private Caracteristicas deletarCaracteristica (HttpServletRequest req)
-	{
-		Caracteristicas caracteristicaDeletar = new Caracteristicas();
-		List<Caracteristicas> caracteristica = servico.listar();
-		
-		if (caracteristica.contains(req))
-		{
-			caracteristicaDeletar.getId();
-		}
-		
-		return caracteristicaDeletar;
 	}
 	
 }
